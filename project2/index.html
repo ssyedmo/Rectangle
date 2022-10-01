@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html lang = "en">
+
+<head>
+    <title> Sliding a rectangle in linear line</title>
+    <meta charset="UTF-8">;
+    <meta name = "viewpoint" content = "width=device-width, initial-scale=1.0">
+    
+</head>
+
+
+<body>
+    <canvas id="myCanvas"> Your browser does not support the canvas element. </canvas>  
+    
+    <script>
+    
+var canvas = document.getElementById("myCanvas");
+var objShape = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let size =0;
+        let size1=0;
+        let positionX = 0;
+        let positionY = 0;
+        let angle = 0;
+        
+        
+        
+        
+        function animation(){
+           
+            objShape.clearRect(0,0,canvas.width,canvas.height);
+            size +=0.15;
+            size1+=0.15;
+            positionX += 0.2;
+            positionY += 0.2;
+            angle +=0.1
+        objShape.fillStyle ='red';
+        objShape.strokeStyle='blue';
+        objShape.beginPath();
+            
+        objShape.rect(positionX, positionY,size,size1);
+        //objShape.arc(positionX,240,size,5,7*Math.PI);
+        //objShape.closePath();
+        objShape.fill();
+        objShape.stroke();
+            
+            requestAnimationFrame(animation);
+        }
+        animation();
+    </script>
+    </body>
+
+
+
+
+</html>
